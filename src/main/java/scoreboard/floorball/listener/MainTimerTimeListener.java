@@ -1,29 +1,24 @@
 package scoreboard.floorball.listener;
 
-import java.io.IOException;
-import java.io.InputStream;
-
-import scoreboard.floorball.JScoreboardFrame;
+import scoreboard.floorball.JScoreboardDisplay;
 import scoreboard.floorball.state.StateHolder;
 import scoreboard.sound.SoundPlayer;
 import scoreboard.timer.TimerTaskListener;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
 
 public class MainTimerTimeListener implements TimerTaskListener {
 
     /**
      * frame
      */
-    private final JScoreboardFrame frame;
+    private final JScoreboardDisplay frame;
 
     /**
      * Creates new instance.
-     * 
-     * @param jScoreboardFrame
+     *
+     * @param jScoreboardDisplay
      */
-    public MainTimerTimeListener(final JScoreboardFrame jScoreboardFrame) {
-        this.frame = jScoreboardFrame;
+    public MainTimerTimeListener(final JScoreboardDisplay jScoreboardDisplay) {
+        this.frame = jScoreboardDisplay;
     }
 
     @Override
@@ -32,16 +27,16 @@ public class MainTimerTimeListener implements TimerTaskListener {
         new SoundPlayer().playHorn();
         this.frame.getMainTimer().removeMainTimerListener(this.frame.getMainTimerTask());
         this.frame.setMainTimerTask(null);
-        this.frame.getFrameManager().getTxtTime().setText("20:00");
-        this.frame.getLblTime().setText("20:00");
-        final Integer period = Integer.valueOf(this.frame.getLblPeriod().getText()) + 1;
-        this.frame.getFrameManager().getSpinnerPeriod().setValue(period.toString());
-        this.frame.getFrameManager().setState(StateHolder.STATE_PERIOD_ENDED);
+        this.frame.getManagerFrame().getTimeField().setText("20:00");
+        this.frame.getTimeLabel().setText("20:00");
+        final Integer period = Integer.valueOf(this.frame.getPeriodLabel().getText()) + 1;
+        this.frame.getManagerFrame().getPeriodSpinner().setValue(period.toString());
+        this.frame.getManagerFrame().setState(StateHolder.STATE_PERIOD_ENDED);
     }
 
     @Override
     public void timeChanged() {
-        this.frame.getLblTime().setText(this.frame.getMainTimerTask().toString("mm:ss"));
-        this.frame.getFrameManager().getTxtTime().setText(this.frame.getMainTimerTask().toString("mm:ss"));
+        this.frame.getTimeLabel().setText(this.frame.getMainTimerTask().toString("mm:ss"));
+        this.frame.getManagerFrame().getTimeField().setText(this.frame.getMainTimerTask().toString("mm:ss"));
     }
 }

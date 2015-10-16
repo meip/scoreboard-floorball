@@ -1,9 +1,9 @@
 /**
- * TimeOutTimeListener.java, 13.12.2011 15:21:28 
+ * TimeOutTimeListener.java, 13.12.2011 15:21:28
  */
 package scoreboard.floorball.listener;
 
-import scoreboard.floorball.JScoreboardFrame;
+import scoreboard.floorball.JScoreboardDisplay;
 import scoreboard.floorball.state.StateHolder;
 import scoreboard.sound.SoundPlayer;
 import scoreboard.timer.MainTimer;
@@ -21,31 +21,31 @@ public class TimeOutTimeListener implements TimerTaskListener {
     /**
      * frame
      */
-    private final JScoreboardFrame frame;
+    private final JScoreboardDisplay frame;
     private final Type type;
 
     /**
      * Creates new instance.
-     * 
+     *
      * @param frame
      */
-    public TimeOutTimeListener(final JScoreboardFrame frame, Type type) {
+    public TimeOutTimeListener(final JScoreboardDisplay frame, Type type) {
         this.frame = frame;
         this.type = type;
     }
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see scoreboard.timer.TimerTaskListener#taskEnded()
      */
     @Override
     public void taskEnded() {
         new SoundPlayer().playHorn();
-        this.frame.getLblTimeOut().setText("");
-        this.frame.getLblTimeOutGuest().setText("");
-        this.frame.getLblTimeOutHost().setText("");
-        this.frame.getFrameManager().setState(StateHolder.STATE_MATCH_PAUSED);
+        this.frame.getTimeOutLabel().setText("");
+        this.frame.getTimeOutGuestLabel().setText("");
+        this.frame.getTimeOutLHostLabel().setText("");
+        this.frame.getManagerFrame().setState(StateHolder.STATE_MATCH_PAUSED);
         this.frame.getTimeoutTimer().pause();
         this.frame.setTimeoutTimer(null);
         this.frame.setTimeoutTimer(new MainTimer());
@@ -53,17 +53,17 @@ public class TimeOutTimeListener implements TimerTaskListener {
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see scoreboard.timer.TimerTaskListener#timeChanged()
      */
     @Override
     public void timeChanged() {
         switch (type) {
             case Host:
-                this.frame.getLblTimeOut().setText(this.frame.getTimerTimeOutHost().toString("mm:ss"));
+                this.frame.getTimeOutLabel().setText(this.frame.getTimeOutHostTimerTask().toString("mm:ss"));
                 break;
             case Guest:
-                this.frame.getLblTimeOut().setText(this.frame.getTimerTimeOutGuest().toString("mm:ss"));
+                this.frame.getTimeOutLabel().setText(this.frame.getTimeOutGuestTimerTask().toString("mm:ss"));
                 break;
         }
     }

@@ -3,9 +3,6 @@
  */
 package scoreboard.timer;
 
-/**
- * @author Kvasnovsky Ondrej
- */
 public interface MainTimerListener {
 
     public void timeChanged(int changedTime);

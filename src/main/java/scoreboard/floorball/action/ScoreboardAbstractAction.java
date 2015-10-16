@@ -3,23 +3,19 @@
  */
 package scoreboard.floorball.action;
 
-import javax.swing.AbstractAction;
-import javax.swing.Icon;
+import scoreboard.floorball.JScoreboardManager;
 
-import scoreboard.floorball.JScoreboardManagerFrame;
+import javax.swing.*;
 
-/**
- * @author Kvasnovsky Ondrej
- */
 public abstract class ScoreboardAbstractAction extends AbstractAction {
 
-    private final JScoreboardManagerFrame frame;
+    private final JScoreboardManager frame;
 
     /**
      * @param frame
      * @param name
      */
-    public ScoreboardAbstractAction(final JScoreboardManagerFrame frame, final String name) {
+    public ScoreboardAbstractAction(final JScoreboardManager frame, final String name) {
         super(name);
         this.frame = frame;
     }
@@ -27,7 +23,7 @@ public abstract class ScoreboardAbstractAction extends AbstractAction {
     /**
      * @return the frame
      */
-    public final JScoreboardManagerFrame getFrame() {
+    public final JScoreboardManager getFrame() {
         return this.frame;
     }
 
@@ -35,7 +31,7 @@ public abstract class ScoreboardAbstractAction extends AbstractAction {
      * @param name
      * @param icon
      */
-    public ScoreboardAbstractAction(final JScoreboardManagerFrame frame, final String name, final Icon icon) {
+    public ScoreboardAbstractAction(final JScoreboardManager frame, final String name, final Icon icon) {
         super(name, icon);
         this.frame = frame;
     }

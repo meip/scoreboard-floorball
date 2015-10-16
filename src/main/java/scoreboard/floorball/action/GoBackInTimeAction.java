@@ -3,28 +3,23 @@
  */
 package scoreboard.floorball.action;
 
+import scoreboard.floorball.JScoreboardManager;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 
-import javax.swing.Icon;
-import javax.swing.JOptionPane;
-
-import scoreboard.floorball.JScoreboardManagerFrame;
-
-/**
- * @author Kvasnovsky Ondrej
- */
 public class GoBackInTimeAction extends ScoreboardAbstractAction {
 
     /**
-    * 
-    */
+     *
+     */
     private static final long serialVersionUID = 3339010344298186098L;
 
     /**
      * @param frame
      * @param name
      */
-    public GoBackInTimeAction(final JScoreboardManagerFrame frame, final String name) {
+    public GoBackInTimeAction(final JScoreboardManager frame, final String name) {
         super(frame, name);
     }
 
@@ -33,7 +28,7 @@ public class GoBackInTimeAction extends ScoreboardAbstractAction {
      * @param name
      * @param icon
      */
-    public GoBackInTimeAction(final JScoreboardManagerFrame frame, final String name, final Icon icon) {
+    public GoBackInTimeAction(final JScoreboardManager frame, final String name, final Icon icon) {
         super(frame, name, icon);
     }
 
@@ -47,7 +42,7 @@ public class GoBackInTimeAction extends ScoreboardAbstractAction {
         final String value = JOptionPane.showInputDialog(getFrame(), "How many seconds?");
         if (value != null && value.matches("((-|\\+)?[0-9]+(\\.[0-9]+)?)+")) {
             final Integer seconds = Integer.valueOf(value);
-            getFrame().getCurrentMatch().goBackInTime(seconds);
+            getFrame().getCurrentDisplay().goBackInTime(seconds);
         }
     }
 }

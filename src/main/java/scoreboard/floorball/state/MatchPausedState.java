@@ -1,66 +1,69 @@
 package scoreboard.floorball.state;
 
-import scoreboard.floorball.JScoreboardManagerFrame;
+import scoreboard.floorball.JScoreboardManager;
 
-/**
- * @author Ondrej Kvasnovsky
- */
+
 public class MatchPausedState extends AbstractState {
 
-    /** 
-     * {@inheritDoc}
-     * @see scoreboard.floorball.state.State#initBtnCancelPenaltyGuest2(scoreboard.floorball.JScoreboardManagerFrame)
-     */
-    @Override
-    public void initBtnCancelPenaltyGuest2(JScoreboardManagerFrame frame) {
-        frame.getBtnCancelPenaltyGuest2().setEnabled(true);
-    }
-
-    /** 
-     * {@inheritDoc}
-     * @see scoreboard.floorball.state.State#initBtnCancelPenaltyGuest1(scoreboard.floorball.JScoreboardManagerFrame)
-     */
-    @Override
-    public void initBtnCancelPenaltyGuest1(JScoreboardManagerFrame frame) {
-        frame.getBtnCancelPenaltyGuest1().setEnabled(true);
-    }
-
-    /** 
-     * {@inheritDoc}
-     * @see scoreboard.floorball.state.State#initBtnCancelPenaltyHost2(scoreboard.floorball.JScoreboardManagerFrame)
-     */
-    @Override
-    public void initBtnCancelPenaltyHost2(JScoreboardManagerFrame frame) {
-        frame.getBtnCancelPenaltyHost2().setEnabled(true);
-    }
-
-    /** 
-     * {@inheritDoc}
-     * @see scoreboard.floorball.state.State#initBtnCancelPenaltyHost1(scoreboard.floorball.JScoreboardManagerFrame)
-     */
-    @Override
-    public void initBtnCancelPenaltyHost1(JScoreboardManagerFrame frame) {
-        frame.getBtnCancelPenaltyHost1().setEnabled(true);
-    }
-
-    
     /**
      * {@inheritDoc}
-     * 
-     * @see scoreboard.floorball.state.State#initBtnTimeoutHost(scoreboard.floorball.JScoreboardManagerFrame)
+     *
+     * @see scoreboard.floorball.state.State#initBtnCancelPenaltyGuest2(scoreboard.floorball.JScoreboardManager)
      */
     @Override
-    public void initBtnTimeoutGuest(JScoreboardManagerFrame frame) {
-        frame.getBtnTimeoutGuest().setEnabled(true);
+    public void initBtnCancelPenaltyGuest2(JScoreboardManager frame) {
+        frame.getCancelGuestPenalty2Button().setEnabled(true);
     }
-    
-    /** 
+
+    /**
      * {@inheritDoc}
-     * @see scoreboard.floorball.state.AbstractState#initBtnTimeoutHost(scoreboard.floorball.JScoreboardManagerFrame)
+     *
+     * @see scoreboard.floorball.state.State#initBtnCancelPenaltyGuest1(scoreboard.floorball.JScoreboardManager)
      */
     @Override
-    public void initBtnTimeoutHost(JScoreboardManagerFrame frame) {
-        frame.getBtnTimeoutHost().setEnabled(true);
+    public void initBtnCancelPenaltyGuest1(JScoreboardManager frame) {
+        frame.getCancelGuestPenalty1Button().setEnabled(true);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @see scoreboard.floorball.state.State#initBtnCancelPenaltyHost2(scoreboard.floorball.JScoreboardManager)
+     */
+    @Override
+    public void initBtnCancelPenaltyHost2(JScoreboardManager frame) {
+        frame.getCancelHostPenalty2Button().setEnabled(true);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @see scoreboard.floorball.state.State#initBtnCancelPenaltyHost1(scoreboard.floorball.JScoreboardManager)
+     */
+    @Override
+    public void initBtnCancelPenaltyHost1(JScoreboardManager frame) {
+        frame.getCancelHostPenalty1Button().setEnabled(true);
+    }
+
+
+    /**
+     * {@inheritDoc}
+     *
+     * @see scoreboard.floorball.state.State#initBtnTimeoutHost(scoreboard.floorball.JScoreboardManager)
+     */
+    @Override
+    public void initBtnTimeoutGuest(JScoreboardManager frame) {
+        frame.getTimeoutGuestButton().setEnabled(true);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @see scoreboard.floorball.state.AbstractState#initBtnTimeoutHost(scoreboard.floorball.JScoreboardManager)
+     */
+    @Override
+    public void initBtnTimeoutHost(JScoreboardManager frame) {
+        frame.getTimeoutHostButton().setEnabled(true);
     }
 
     /*
@@ -69,18 +72,18 @@ public class MatchPausedState extends AbstractState {
      * @see scoreboard.floorball.state.State#initSpinnerGuest(scoreboard.floorball .JChronometerManagerFrame)
      */
     @Override
-    public void initSpinnerGuest(final JScoreboardManagerFrame frame) {
-        frame.getSpinnerGuest().setEnabled(true);
+    public void initSpinnerGuest(final JScoreboardManager frame) {
+        frame.getGuestGoalSpinner().setEnabled(true);
     }
 
     /*
      * (non-Javadoc)
      * 
-     * @see scoreboard.floorball.state.State#initBtnGoBackInTime(scoreboard.floorball. JScoreboardManagerFrame)
+     * @see scoreboard.floorball.state.State#initBtnGoBackInTime(scoreboard.floorball. JScoreboardManager)
      */
     @Override
-    public void initBtnGoBackInTime(final JScoreboardManagerFrame frame) {
-        frame.getBtnGoBackInTime().setEnabled(true);
+    public void initBtnGoBackInTime(final JScoreboardManager frame) {
+        frame.getGoBackInTimeButton().setEnabled(true);
     }
 
     /*
@@ -89,8 +92,8 @@ public class MatchPausedState extends AbstractState {
      * @see scoreboard.floorball.state.State#initSpinnerHost(scoreboard.floorball .JChronometerManagerFrame)
      */
     @Override
-    public void initSpinnerHost(final JScoreboardManagerFrame frame) {
-        frame.getSpinnerHost().setEnabled(true);
+    public void initSpinnerHost(final JScoreboardManager frame) {
+        frame.getHostGoalSpinner().setEnabled(true);
     }
 
     /*
@@ -100,19 +103,19 @@ public class MatchPausedState extends AbstractState {
      * chronometer.JChronometerManagerFrame)
      */
     @Override
-    public void initSpinnerPeriod(final JScoreboardManagerFrame frame) {
-        frame.getSpinnerPeriod().setEnabled(true);
+    public void initSpinnerPeriod(final JScoreboardManager frame) {
+        frame.getPeriodSpinner().setEnabled(true);
     }
 
     /*
      * (non-Javadoc)
      * 
      * @seecom.ondrejkvasnovsky.chronometer.state.AbstractState#initBtnContinueMatch(scoreboard.floorball.
-     * JScoreboardManagerFrame)
+     * JScoreboardManager)
      */
     @Override
-    public void initBtnContinueMatch(final JScoreboardManagerFrame frame) {
-        frame.getBtnContinueMatch().setEnabled(true);
+    public void initBtnContinueMatch(final JScoreboardManager frame) {
+        frame.getContinueMatchButton().setEnabled(true);
     }
 
     /*
@@ -121,8 +124,8 @@ public class MatchPausedState extends AbstractState {
      * @see scoreboard.floorball.state.State#initTxtGuest(scoreboard.floorball .JChronometerManagerFrame)
      */
     @Override
-    public void initTxtGuest(final JScoreboardManagerFrame frame) {
-        frame.getTxtGuest().setEnabled(true);
+    public void initTxtGuest(final JScoreboardManager frame) {
+        frame.getGuestNameField().setEnabled(true);
     }
 
     /*
@@ -132,9 +135,9 @@ public class MatchPausedState extends AbstractState {
      * .chronometer.JChronometerManagerFrame)
      */
     @Override
-    public void initTxtGuestPenality1(final JScoreboardManagerFrame frame) {
-        if (":".equals(frame.getTxtGuestPenalty1().getText().trim())) {
-            frame.getTxtGuestPenalty1().setEnabled(true);
+    public void initTxtGuestPenality1(final JScoreboardManager frame) {
+        if (":".equals(frame.getGuestPenalty1Field().getText().trim())) {
+            frame.getGuestPenalty1Field().setEnabled(true);
         }
     }
 
@@ -145,9 +148,9 @@ public class MatchPausedState extends AbstractState {
      * .chronometer.JChronometerManagerFrame)
      */
     @Override
-    public void initTxtGuestPenalty1(final JScoreboardManagerFrame frame) {
-        if (":".equals(frame.getTxtGuestPenalty2().getText().trim())) {
-            frame.getTxtGuestPenalty2().setEnabled(true);
+    public void initTxtGuestPenalty1(final JScoreboardManager frame) {
+        if (":".equals(frame.getGuestPenalty2Field().getText().trim())) {
+            frame.getGuestPenalty2Field().setEnabled(true);
         }
     }
 
@@ -157,8 +160,8 @@ public class MatchPausedState extends AbstractState {
      * @see scoreboard.floorball.state.State#initTxtHost(scoreboard.floorball .JChronometerManagerFrame)
      */
     @Override
-    public void initTxtHost(final JScoreboardManagerFrame frame) {
-        frame.getTxtHost().setEnabled(true);
+    public void initTxtHost(final JScoreboardManager frame) {
+        frame.getHostNameField().setEnabled(true);
     }
 
     /*
@@ -168,9 +171,9 @@ public class MatchPausedState extends AbstractState {
      * chronometer.JChronometerManagerFrame)
      */
     @Override
-    public void initTxtHostPenalty1(final JScoreboardManagerFrame frame) {
-        if (":".equals(frame.getTxtHostPenalty1().getText().trim())) {
-            frame.getTxtHostPenalty1().setEnabled(true);
+    public void initTxtHostPenalty1(final JScoreboardManager frame) {
+        if (":".equals(frame.getHostPenalty1Field().getText().trim())) {
+            frame.getHostPenalty1Field().setEnabled(true);
         }
     }
 
@@ -181,9 +184,9 @@ public class MatchPausedState extends AbstractState {
      * chronometer.JChronometerManagerFrame)
      */
     @Override
-    public void initTxtHostPenalty2(final JScoreboardManagerFrame frame) {
-        if (":".equals(frame.getTxtHostPenalty2().getText().trim())) {
-            frame.getTxtHostPenalty2().setEnabled(true);
+    public void initTxtHostPenalty2(final JScoreboardManager frame) {
+        if (":".equals(frame.getHostPenalty2Field().getText().trim())) {
+            frame.getHostPenalty2Field().setEnabled(true);
         }
     }
 }

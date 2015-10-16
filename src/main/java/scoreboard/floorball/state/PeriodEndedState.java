@@ -3,32 +3,29 @@
  */
 package scoreboard.floorball.state;
 
-import scoreboard.floorball.JScoreboardManagerFrame;
+import scoreboard.floorball.JScoreboardManager;
 
-/**
- * @author Kvasnovsky Ondrej
- */
 public class PeriodEndedState extends AbstractState {
 
     /*
      * (non-Javadoc)
      * 
      * @see scoreboard.floorball.state.AbstractState#initBtnStartNextPeriod(scoreboard.floorball.
-     * JScoreboardManagerFrame)
+     * JScoreboardManager)
      */
     @Override
-    public void initBtnStartNextPeriod(final JScoreboardManagerFrame frame) {
-        frame.getBtnStartNextPeriod().setEnabled(true);
+    public void initBtnStartNextPeriod(final JScoreboardManager frame) {
+        frame.getStartNextPeriodButton().setEnabled(true);
     }
 
     /*
      * (non-Javadoc)
      * 
      * @seecom.ondrejkvasnovsky.chronometer.state.AbstractState#initTxtTime(scoreboard.floorball.
-     * JScoreboardManagerFrame)
+     * JScoreboardManager)
      */
     @Override
-    public void initTxtTime(final JScoreboardManagerFrame frame) {
-        frame.getTxtTime().setEnabled(true);
+    public void initTxtTime(final JScoreboardManager frame) {
+        frame.getTimeField().setEnabled(true);
     }
 }

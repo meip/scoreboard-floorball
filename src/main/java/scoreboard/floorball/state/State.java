@@ -1,54 +1,52 @@
 package scoreboard.floorball.state;
 
-import javax.swing.JButton;
-
-import scoreboard.floorball.JScoreboardManagerFrame;
+import scoreboard.floorball.JScoreboardManager;
 
 public interface State {
 
-    public void initPnlMain(JScoreboardManagerFrame frame);
+    public void initPnlMain(JScoreboardManager frame);
 
-    public void initTxtHost(JScoreboardManagerFrame frame);
+    public void initTxtHost(JScoreboardManager frame);
 
-    public void initBtnStart(JScoreboardManagerFrame frame);
+    public void initBtnStart(JScoreboardManager frame);
 
-    public void initTxtGuestPenalty1(JScoreboardManagerFrame frame);
+    public void initTxtGuestPenalty1(JScoreboardManager frame);
 
-    public void initTxtGuestPenality1(JScoreboardManagerFrame frame);
+    public void initTxtGuestPenality1(JScoreboardManager frame);
 
-    public void initTxtHostPenalty2(JScoreboardManagerFrame frame);
+    public void initTxtHostPenalty2(JScoreboardManager frame);
 
-    public void initTxtHostPenalty1(JScoreboardManagerFrame frame);
+    public void initTxtHostPenalty1(JScoreboardManager frame);
 
-    public void initBtnPause(JScoreboardManagerFrame frame);
+    public void initBtnPause(JScoreboardManager frame);
 
-    public void initSpinnerPeriod(JScoreboardManagerFrame frame);
+    public void initSpinnerPeriod(JScoreboardManager frame);
 
-    public void initSpinnerGuest(JScoreboardManagerFrame frame);
+    public void initSpinnerGuest(JScoreboardManager frame);
 
-    public void initSpinnerHost(JScoreboardManagerFrame frame);
+    public void initSpinnerHost(JScoreboardManager frame);
 
-    public void initTxtGuest(JScoreboardManagerFrame frame);
+    public void initTxtGuest(JScoreboardManager frame);
 
-    public void initTxtTime(JScoreboardManagerFrame frame);
+    public void initTxtTime(JScoreboardManager frame);
 
-    public void initBtnShowChronometer(JScoreboardManagerFrame frame);
+    public void initBtnShowChronometer(JScoreboardManager frame);
 
-    public void initBtnContinueMatch(JScoreboardManagerFrame frame);
+    public void initBtnContinueMatch(JScoreboardManager frame);
 
-    public void initBtnStartNextPeriod(JScoreboardManagerFrame frame);
+    public void initBtnStartNextPeriod(JScoreboardManager frame);
 
-    public void initBtnGoBackInTime(JScoreboardManagerFrame frame);
+    public void initBtnGoBackInTime(JScoreboardManager frame);
 
-    public void initBtnTimeoutGuest(JScoreboardManagerFrame frame);
+    public void initBtnTimeoutGuest(JScoreboardManager frame);
 
-    public void initBtnTimeoutHost(JScoreboardManagerFrame frame);
+    public void initBtnTimeoutHost(JScoreboardManager frame);
 
-    public void initBtnCancelPenaltyGuest2(JScoreboardManagerFrame frame);
+    public void initBtnCancelPenaltyGuest2(JScoreboardManager frame);
 
-    public void initBtnCancelPenaltyGuest1(JScoreboardManagerFrame frame);
+    public void initBtnCancelPenaltyGuest1(JScoreboardManager frame);
 
-    public void initBtnCancelPenaltyHost2(JScoreboardManagerFrame frame);
+    public void initBtnCancelPenaltyHost2(JScoreboardManager frame);
 
-    public void initBtnCancelPenaltyHost1(JScoreboardManagerFrame frame);
+    public void initBtnCancelPenaltyHost1(JScoreboardManager frame);
 }

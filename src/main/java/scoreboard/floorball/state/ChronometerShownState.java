@@ -3,13 +3,9 @@
  */
 package scoreboard.floorball.state;
 
-import scoreboard.floorball.JScoreboardManagerFrame;
+import scoreboard.floorball.JScoreboardManager;
 
-/**
- * @author Kvasnovsky Ondrej
- * 
- */
-public class ChronometerShownState extends AbstractState {
+public class ChronometerShownState extends DefaultState {
 
     /*
      * (non-Javadoc)
@@ -18,8 +14,12 @@ public class ChronometerShownState extends AbstractState {
      * .chronometer.JChronometerManagerFrame)
      */
     @Override
-    public void initBtnStart(final JScoreboardManagerFrame frame) {
-        frame.getBtnStart().setEnabled(true);
+    public void initBtnStart(final JScoreboardManager frame) {
+        frame.getStartMatchButton().setEnabled(true);
     }
 
+    @Override
+    public void initBtnShowChronometer(final JScoreboardManager frame) {
+        frame.getShowChronometerButton().setEnabled(false);
+    }
 }

@@ -1,6 +1,6 @@
 package scoreboard.floorball.state;
 
-import scoreboard.floorball.JScoreboardManagerFrame;
+import scoreboard.floorball.JScoreboardManager;
 
 public class MatchStartedState extends AbstractState {
 
@@ -8,10 +8,10 @@ public class MatchStartedState extends AbstractState {
      * (non-Javadoc)
      * 
      * @seecom.ondrejkvasnovsky.chronometer.state.AbstractState#initBtnPause(scoreboard.floorball.
-     * JScoreboardManagerFrame)
+     * JScoreboardManager)
      */
     @Override
-    public void initBtnPause(final JScoreboardManagerFrame frame) {
-        frame.getBtnPause().setEnabled(true);
+    public void initBtnPause(final JScoreboardManager frame) {
+        frame.getPauseMatchButton().setEnabled(true);
     }
 }

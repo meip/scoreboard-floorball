@@ -1,20 +1,18 @@
 package scoreboard.floorball.action;
 
-import java.awt.event.ActionEvent;
-
-import scoreboard.floorball.JScoreboardManagerFrame;
+import scoreboard.floorball.JScoreboardManager;
 import scoreboard.floorball.state.StateHolder;
 
-/**
- * @author Ondrej Kvasnovsky
- */
+import java.awt.event.ActionEvent;
+
+
 public class ContinueMatchAction extends ScoreboardAbstractAction {
 
     /**
      * @param frame
      * @param name
      */
-    public ContinueMatchAction(final JScoreboardManagerFrame frame, final String name) {
+    public ContinueMatchAction(final JScoreboardManager frame, final String name) {
         super(frame, name);
     }
 
@@ -25,11 +23,11 @@ public class ContinueMatchAction extends ScoreboardAbstractAction {
      */
     @Override
     public void actionPerformed(final ActionEvent e) {
-        final JScoreboardManagerFrame frame = getFrame();
-        frame.getCurrentMatch().continueMatch();
-        frame.getCurrentMatch().updateMatchData();
-        frame.getCurrentMatch().penaltyToGuest();
-        frame.getCurrentMatch().penaltyToHost();
+        final JScoreboardManager frame = getFrame();
+        frame.getCurrentDisplay().continueMatch();
+        frame.getCurrentDisplay().updateMatchData();
+        frame.getCurrentDisplay().penaltyToGuest();
+        frame.getCurrentDisplay().penaltyToHost();
         frame.setState(StateHolder.STATE_MATCH_STARTED);
     }
 }

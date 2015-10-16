@@ -6,9 +6,7 @@ package scoreboard.timer;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Ondrej Kvasnovsky
- */
+
 public class MainTimer extends Thread {
 
     private final int changedTime = 1000;
@@ -61,8 +59,7 @@ public class MainTimer extends Thread {
                         }
                     }
                 }
-            }
-            catch (final Exception e) {
+            } catch (final Exception e) {
                 e.printStackTrace();
             }
         }

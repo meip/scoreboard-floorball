@@ -3,10 +3,6 @@
  */
 package scoreboard.timer;
 
-/**
- * @author Kvasnovsky Ondrej
- * 
- */
 public interface TimerTaskListener {
 
     void taskEnded();

@@ -3,17 +3,12 @@
  */
 package scoreboard.floorball.action;
 
-import java.awt.event.ActionEvent;
-
-import javax.swing.Icon;
-
-import scoreboard.floorball.JScoreboardManagerFrame;
+import scoreboard.floorball.JScoreboardManager;
 import scoreboard.floorball.state.StateHolder;
 
-/**
- * @author Kvasnovsky Ondrej
- * 
- */
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+
 public class StartNextPeriodAction extends ScoreboardAbstractAction {
 
     /**
@@ -21,7 +16,7 @@ public class StartNextPeriodAction extends ScoreboardAbstractAction {
      * @param name
      * @param icon
      */
-    public StartNextPeriodAction(final JScoreboardManagerFrame frame, final String name, final Icon icon) {
+    public StartNextPeriodAction(final JScoreboardManager frame, final String name, final Icon icon) {
         super(frame, name, icon);
     }
 
@@ -29,7 +24,7 @@ public class StartNextPeriodAction extends ScoreboardAbstractAction {
      * @param frame
      * @param name
      */
-    public StartNextPeriodAction(final JScoreboardManagerFrame frame, final String name) {
+    public StartNextPeriodAction(final JScoreboardManager frame, final String name) {
         super(frame, name);
     }
 
@@ -40,8 +35,8 @@ public class StartNextPeriodAction extends ScoreboardAbstractAction {
      */
     @Override
     public void actionPerformed(final ActionEvent e) {
-        getFrame().getCurrentMatch().updateMatchData();
-        getFrame().getCurrentMatch().startNextPeriod();
+        getFrame().getCurrentDisplay().updateMatchData();
+        getFrame().getCurrentDisplay().startNextPeriod();
         getFrame().setState(StateHolder.STATE_MATCH_STARTED);
     }
 }

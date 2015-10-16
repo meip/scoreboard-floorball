@@ -3,12 +3,8 @@
  */
 package scoreboard.floorball.state;
 
-import scoreboard.floorball.JScoreboardManagerFrame;
+import scoreboard.floorball.JScoreboardManager;
 
-/**
- * @author Kvasnovsky Ondrej
- * 
- */
 public class StateHolder {
 
     public static final ChronometerShownState STATE_START_ENABLED = new ChronometerShownState();
@@ -17,14 +13,11 @@ public class StateHolder {
     public static final MatchPausedState STATE_MATCH_PAUSED = new MatchPausedState();
     public static final PeriodEndedState STATE_PERIOD_ENDED = new PeriodEndedState();
     public static final TimeOutState STATE_TIMEOUT = new TimeOutState();
-    
-    private State state;
-    private final JScoreboardManagerFrame frame;
 
-    /**
-    * 
-    */
-    public StateHolder(final JScoreboardManagerFrame frame) {
+    private State state;
+    private final JScoreboardManager frame;
+
+    public StateHolder(final JScoreboardManager frame) {
         this.frame = frame;
     }
 

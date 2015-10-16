@@ -1,13 +1,12 @@
 /**
- * CancelPenaltyAction.java, 13.12.2011 18:52:13 
+ * CancelPenaltyAction.java, 13.12.2011 18:52:13
  */
 package scoreboard.floorball.action;
 
+import scoreboard.floorball.JScoreboardManager;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
-
-import javax.swing.Icon;
-
-import scoreboard.floorball.JScoreboardManagerFrame;
 
 /**
  * @author kvasnond
@@ -22,59 +21,54 @@ public class CancelPenaltyAction extends ScoreboardAbstractAction {
 
     /**
      * Creates new instance.
-     * 
+     *
      * @param frame
      * @param name
      */
-    public CancelPenaltyAction(final JScoreboardManagerFrame frame, final String name, final Type type) {
+    public CancelPenaltyAction(final JScoreboardManager frame, final String name, final Type type) {
         super(frame, name);
         this.type = type;
     }
 
     /**
      * Creates new instance.
-     * 
+     *
      * @param frame
      * @param name
      * @param icon
      */
-    public CancelPenaltyAction(final JScoreboardManagerFrame frame, final String name, final Icon icon) {
+    public CancelPenaltyAction(final JScoreboardManager frame, final String name, final Icon icon) {
         super(frame, name, icon);
     }
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
      */
     @Override
     public void actionPerformed(final ActionEvent e) {
-        // TODO Auto-generated method stub
         System.out.println("X " + this.type);
         switch (type) {
             case Host1:
-                getFrame().getCurrentMatch().getTimerHostPenalty1().setTime(0);
-                getFrame().getCurrentMatch().setTimerGuestPenalty1(null);
-                getFrame().getCurrentMatch().getLblHostPenalty1().setText("");
-                getFrame().getTxtHostPenalty1().setText("");
+                getFrame().getCurrentDisplay().getHostPenalty1Timer().setTime(0);
+                getFrame().getCurrentDisplay().getPenaltyHost1Label().setText("");
+                getFrame().getHostPenalty1Field().setText("");
                 break;
             case Host2:
-                getFrame().getCurrentMatch().getTimerHostPenalty2().setTime(0);
-                getFrame().getCurrentMatch().getLblHostPenalty2().setText("");
-                getFrame().getTxtHostPenalty2().setText("");
-                getFrame().getCurrentMatch().getTimerHostPenalty2();
+                getFrame().getCurrentDisplay().getHostPenalty2Timer().setTime(0);
+                getFrame().getCurrentDisplay().getPenaltyHost2Label().setText("");
+                getFrame().getHostPenalty2Field().setText("");
                 break;
             case Guest1:
-                getFrame().getCurrentMatch().getTimerGuestPenalty1().setTime(0);
-                getFrame().getCurrentMatch().getLblGuestPenalty1().setText("");
-                getFrame().getTxtGuestPenalty1().setText("");
-                getFrame().getCurrentMatch().getTimerGuestPenalty1();
+                getFrame().getCurrentDisplay().getGuestPenalty1Timer().setTime(0);
+                getFrame().getCurrentDisplay().getPenaltyGuest1Label().setText("");
+                getFrame().getGuestPenalty1Field().setText("");
                 break;
             case Guest2:
-                getFrame().getCurrentMatch().getTimerGuestPenalty2().setTime(0);
-                getFrame().getCurrentMatch().getLblGuestPenalty2().setText("");
-                getFrame().getTxtGuestPenalty2().setText("");
-                getFrame().getCurrentMatch().getTimerGuestPenalty2();
+                getFrame().getCurrentDisplay().getGuestPenalty2Timer().setTime(0);
+                getFrame().getCurrentDisplay().getPenaltyGuest2Label().setText("");
+                getFrame().getGuestPenalty2Field().setText("");
                 break;
 
         }

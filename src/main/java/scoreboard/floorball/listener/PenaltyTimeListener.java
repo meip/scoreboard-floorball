@@ -1,30 +1,27 @@
 package scoreboard.floorball.listener;
 
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-
-import scoreboard.floorball.JScoreboardFrame;
+import scoreboard.floorball.JScoreboardDisplay;
 import scoreboard.timer.TimerTask;
 import scoreboard.timer.TimerTaskListener;
 
-/**
- * @author Ondrej Kvasnovsky
- */
+import javax.swing.*;
+
+
 public class PenaltyTimeListener implements TimerTaskListener {
 
     /**
      * frame
      */
-    private final JScoreboardFrame frame;
+    private final JScoreboardDisplay frame;
     private final JLabel lbl;
     private final TimerTask timer;
     private final JTextField txt;
 
     /**
      * @param lbl
-     * @param jScoreboardFrame TODO
+     * @param frame TODO
      */
-    public PenaltyTimeListener(JScoreboardFrame frame, final JLabel lbl, final JTextField txt, final TimerTask timer) {
+    public PenaltyTimeListener(JScoreboardDisplay frame, final JLabel lbl, final JTextField txt, final TimerTask timer) {
         this.frame = frame;
         this.lbl = lbl;
         this.txt = txt;
@@ -33,29 +30,26 @@ public class PenaltyTimeListener implements TimerTaskListener {
 
     @Override
     public void taskEnded() {
-        if (this.timer == getFrame().getTimerGuestPenalty1()) {
-            getFrame().getFrameManager().getTxtGuestPenalty1().setText("");
-            getFrame().getLblGuestPenalty1().setText(" ");
-            getFrame().getMainTimer().removeMainTimerListener(getFrame().getTimerGuestPenalty1());
-            getFrame().setTimerGuestPenalty1(null);
-        }
-        else if (this.timer == getFrame().getTimerGuestPenalty2()) {
-            getFrame().getFrameManager().getTxtGuestPenalty2().setText("");
-            getFrame().getLblGuestPenalty2().setText(" ");
-            getFrame().getMainTimer().removeMainTimerListener(getFrame().getTimerGuestPenalty2());
-            getFrame().setTimerGuestPenalty2(null);
-        }
-        else if (this.timer == getFrame().getTimerHostPenalty1()) {
-            getFrame().getFrameManager().getTxtHostPenalty1().setText("");
-            getFrame().getLblHostPenalty1().setText(" ");
-            getFrame().getMainTimer().removeMainTimerListener(getFrame().getTimerHostPenalty1());
-            getFrame().setTimerHostPenalty1(null);
-        }
-        else if (this.timer == getFrame().getTimerHostPenalty2()) {
-            getFrame().getFrameManager().getTxtHostPenalty2().setText("");
-            getFrame().getLblHostPenalty2().setText(" ");
-            getFrame().getMainTimer().removeMainTimerListener(getFrame().getTimerHostPenalty2());
-            getFrame().setTimerHostPenalty2(null);
+        if (this.timer == getFrame().getGuestPenalty1Timer()) {
+            getFrame().getManagerFrame().getGuestPenalty1Field().setText("");
+            getFrame().getPenaltyGuest1Label().setText(" ");
+            getFrame().getMainTimer().removeMainTimerListener(getFrame().getGuestPenalty1Timer());
+            getFrame().setGuestPenalty1Timer(null);
+        } else if (this.timer == getFrame().getGuestPenalty2Timer()) {
+            getFrame().getManagerFrame().getGuestPenalty2Field().setText("");
+            getFrame().getPenaltyGuest2Label().setText(" ");
+            getFrame().getMainTimer().removeMainTimerListener(getFrame().getGuestPenalty2Timer());
+            getFrame().setGuestPenalty2Timer(null);
+        } else if (this.timer == getFrame().getHostPenalty1Timer()) {
+            getFrame().getManagerFrame().getHostPenalty1Field().setText("");
+            getFrame().getPenaltyHost1Label().setText(" ");
+            getFrame().getMainTimer().removeMainTimerListener(getFrame().getHostPenalty1Timer());
+            getFrame().setHostPenalty1Timer(null);
+        } else if (this.timer == getFrame().getHostPenalty2Timer()) {
+            getFrame().getManagerFrame().getHostPenalty2Field().setText("");
+            getFrame().getPenaltyHost2Label().setText(" ");
+            getFrame().getMainTimer().removeMainTimerListener(getFrame().getHostPenalty2Timer());
+            getFrame().setHostPenalty2Timer(null);
         }
     }
 
@@ -67,10 +61,10 @@ public class PenaltyTimeListener implements TimerTaskListener {
 
     /**
      * Returns the frame.
-     * 
+     *
      * @return the frame
      */
-    public JScoreboardFrame getFrame() {
+    public JScoreboardDisplay getFrame() {
         return this.frame;
     }
 }

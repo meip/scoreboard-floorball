@@ -8,9 +8,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @author Kvasnovsky Ondrej
- */
 public class TimerTask implements MainTimerListener {
 
     private final SimpleDateFormat formatMss = new SimpleDateFormat("m:ss");
@@ -81,8 +78,7 @@ public class TimerTask implements MainTimerListener {
     public String toString(final String format) {
         if ("m:ss".equals(format)) {
             return this.formatMss.format(new Date(this.time));
-        }
-        else {
+        } else {
             return this.formatMmss.format(new Date(this.time));
         }
     }

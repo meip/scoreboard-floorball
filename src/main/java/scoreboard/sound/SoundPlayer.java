@@ -1,13 +1,13 @@
 /**
- * SoundPlayer.java, 13.12.2011 16:05:34 
+ * SoundPlayer.java, 13.12.2011 16:05:34
  */
 package scoreboard.sound;
 
-import java.io.IOException;
-import java.io.InputStream;
-
 import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * @author kvasnond
@@ -26,14 +26,11 @@ public class SoundPlayer {
             Thread.currentThread();
             Thread.sleep(2000);
             AudioPlayer.player.stop(as);
-        }
-        catch (final java.net.MalformedURLException e) {
+        } catch (final java.net.MalformedURLException e) {
             System.err.println("can't form horn.au URL");
-        }
-        catch (final IOException e) {
+        } catch (final IOException e) {
             System.out.println(e.getMessage());
-        }
-        catch (final InterruptedException e) {
+        } catch (final InterruptedException e) {
             System.out.println(e.getMessage());
         }
     }

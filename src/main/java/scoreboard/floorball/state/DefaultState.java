@@ -3,12 +3,8 @@
  */
 package scoreboard.floorball.state;
 
-import scoreboard.floorball.JScoreboardManagerFrame;
+import scoreboard.floorball.JScoreboardManager;
 
-/**
- * @author Kvasnovsky Ondrej
- * 
- */
 public class DefaultState extends AbstractState {
 
     /*
@@ -18,41 +14,41 @@ public class DefaultState extends AbstractState {
      * .chronometer.JChronometerManagerFrame)
      */
     @Override
-    public void initBtnShowChronometer(final JScoreboardManagerFrame frame) {
-        frame.getBtnShowChronometer().setEnabled(true);
+    public void initBtnShowChronometer(final JScoreboardManager frame) {
+        frame.getShowChronometerButton().setEnabled(true);
     }
 
     /*
      * (non-Javadoc)
      * 
      * @seecom.ondrejkvasnovsky.chronometer.state.AbstractState#initTxtGuest(scoreboard.floorball.
-     * JScoreboardManagerFrame)
+     * JScoreboardManager)
      */
     @Override
-    public void initTxtGuest(final JScoreboardManagerFrame frame) {
-        frame.getTxtGuest().setEnabled(true);
+    public void initTxtGuest(final JScoreboardManager frame) {
+        frame.getGuestNameField().setEnabled(true);
     }
 
     /*
      * (non-Javadoc)
      * 
      * @seecom.ondrejkvasnovsky.chronometer.state.AbstractState#initTxtHost(scoreboard.floorball.
-     * JScoreboardManagerFrame)
+     * JScoreboardManager)
      */
     @Override
-    public void initTxtHost(final JScoreboardManagerFrame frame) {
-        frame.getTxtHost().setEnabled(true);
+    public void initTxtHost(final JScoreboardManager frame) {
+        frame.getHostNameField().setEnabled(true);
     }
 
     /*
      * (non-Javadoc)
      * 
      * @seecom.ondrejkvasnovsky.chronometer.state.AbstractState#initTxtTime(scoreboard.floorball.
-     * JScoreboardManagerFrame)
+     * JScoreboardManager)
      */
     @Override
-    public void initTxtTime(final JScoreboardManagerFrame frame) {
-        frame.getTxtTime().setEnabled(true);
+    public void initTxtTime(final JScoreboardManager frame) {
+        frame.getTimeField().setEnabled(true);
     }
 
 }
