@@ -375,7 +375,7 @@ public class JScoreboardManagerFrame extends JFrame {
                 }
                 {
                     final SpinnerListModel spinnerPeriodModel = new SpinnerListModel(
-                            new String[] {"1", "2", "3"});
+                            new String[] {"1", "2", "3", "4", "5"});
                     this.spinnerPeriod = new JSpinner();
                     pnlMain.add(spinnerPeriod, new GridBagConstraints(1, 1, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(1, 5, 1, 5), 0, 0));
                     this.spinnerPeriod.setModel(spinnerPeriodModel);
