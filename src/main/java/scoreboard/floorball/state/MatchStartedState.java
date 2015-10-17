@@ -14,4 +14,15 @@ public class MatchStartedState extends AbstractState {
     public void initBtnPause(final JScoreboardManager frame) {
         frame.getPauseMatchButton().setEnabled(true);
     }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see scoreboard.floorball.state.State#initFocus(com.ondrejkvasnovsky.
+     * chronometer.JChronometerManagerFrame)
+     */
+    @Override
+    public void initFocus(JScoreboardManager frame){
+        frame.getPauseMatchButton().grabFocus();
+    }
 }

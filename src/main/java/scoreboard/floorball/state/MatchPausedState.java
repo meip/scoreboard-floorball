@@ -131,11 +131,11 @@ public class MatchPausedState extends AbstractState {
     /*
      * (non-Javadoc)
      * 
-     * @see scoreboard.floorball.state.State#initTxtGuestPenality1(com.ondrejkvasnovsky
+     * @see scoreboard.floorball.state.State#initTxtGuestPenalty1(com.ondrejkvasnovsky
      * .chronometer.JChronometerManagerFrame)
      */
     @Override
-    public void initTxtGuestPenality1(final JScoreboardManager frame) {
+    public void initTxtGuestPenalty1(final JScoreboardManager frame) {
         if (":".equals(frame.getGuestPenalty1Field().getText().trim())) {
             frame.getGuestPenalty1Field().setEnabled(true);
         }
@@ -144,11 +144,11 @@ public class MatchPausedState extends AbstractState {
     /*
      * (non-Javadoc)
      * 
-     * @see scoreboard.floorball.state.State#initTxtGuestPenalty1(com.ondrejkvasnovsky
+     * @see scoreboard.floorball.state.State#initTxtGuestPenalty2(com.ondrejkvasnovsky
      * .chronometer.JChronometerManagerFrame)
      */
     @Override
-    public void initTxtGuestPenalty1(final JScoreboardManager frame) {
+    public void initTxtGuestPenalty2(final JScoreboardManager frame) {
         if (":".equals(frame.getGuestPenalty2Field().getText().trim())) {
             frame.getGuestPenalty2Field().setEnabled(true);
         }
@@ -188,5 +188,16 @@ public class MatchPausedState extends AbstractState {
         if (":".equals(frame.getHostPenalty2Field().getText().trim())) {
             frame.getHostPenalty2Field().setEnabled(true);
         }
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see scoreboard.floorball.state.State#initFocus(com.ondrejkvasnovsky.
+     * chronometer.JChronometerManagerFrame)
+     */
+    @Override
+    public void initFocus(JScoreboardManager frame){
+        frame.getContinueMatchButton().grabFocus();
     }
 }

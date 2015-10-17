@@ -41,8 +41,8 @@ public class StateHolder {
         this.state.initPnlMain(this.frame);
         this.state.initTxtHost(this.frame);
         this.state.initBtnStart(this.frame);
+        this.state.initTxtGuestPenalty2(this.frame);
         this.state.initTxtGuestPenalty1(this.frame);
-        this.state.initTxtGuestPenality1(this.frame);
         this.state.initTxtHostPenalty2(this.frame);
         this.state.initTxtHostPenalty1(this.frame);
         this.state.initBtnPause(this.frame);
@@ -61,5 +61,6 @@ public class StateHolder {
         this.state.initBtnCancelPenaltyGuest2(this.frame);
         this.state.initBtnCancelPenaltyHost1(this.frame);
         this.state.initBtnCancelPenaltyHost2(this.frame);
+        this.state.initFocus(this.frame);
     }
 }

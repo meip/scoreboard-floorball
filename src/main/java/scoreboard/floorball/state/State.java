@@ -10,9 +10,9 @@ public interface State {
 
     public void initBtnStart(JScoreboardManager frame);
 
-    public void initTxtGuestPenalty1(JScoreboardManager frame);
+    public void initTxtGuestPenalty2(JScoreboardManager frame);
 
-    public void initTxtGuestPenality1(JScoreboardManager frame);
+    public void initTxtGuestPenalty1(JScoreboardManager frame);
 
     public void initTxtHostPenalty2(JScoreboardManager frame);
 
@@ -49,4 +49,6 @@ public interface State {
     public void initBtnCancelPenaltyHost2(JScoreboardManager frame);
 
     public void initBtnCancelPenaltyHost1(JScoreboardManager frame);
+
+    public void initFocus(JScoreboardManager frame);
 }

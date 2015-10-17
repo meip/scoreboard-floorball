@@ -20,7 +20,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>scoreboard.floorball.JScoreboardManagerFrame</mainClass>
+							<mainClass>scoreboard.floorball.JScoreboardManager</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

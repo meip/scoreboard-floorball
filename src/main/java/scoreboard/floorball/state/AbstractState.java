@@ -145,10 +145,10 @@ public abstract class AbstractState implements State {
     /**
      * {@inheritDoc}
      *
-     * @see scoreboard.floorball.state.State#initTxtGuestPenality1(scoreboard.floorball.JScoreboardManager)
+     * @see scoreboard.floorball.state.State#initTxtGuestPenalty1(scoreboard.floorball.JScoreboardManager)
      */
     @Override
-    public void initTxtGuestPenality1(final JScoreboardManager frame) {
+    public void initTxtGuestPenalty1(final JScoreboardManager frame) {
         frame.getGuestPenalty1Field().setEnabled(false);
     }
 
@@ -195,10 +195,10 @@ public abstract class AbstractState implements State {
     /**
      * {@inheritDoc}
      *
-     * @see scoreboard.floorball.state.State#initTxtGuestPenalty1(scoreboard.floorball.JScoreboardManager)
+     * @see scoreboard.floorball.state.State#initTxtGuestPenalty2(scoreboard.floorball.JScoreboardManager)
      */
     @Override
-    public void initTxtGuestPenalty1(final JScoreboardManager frame) {
+    public void initTxtGuestPenalty2(final JScoreboardManager frame) {
         frame.getGuestPenalty2Field().setEnabled(false);
     }
 
@@ -240,5 +240,15 @@ public abstract class AbstractState implements State {
     @Override
     public void initTxtTime(final JScoreboardManager frame) {
         frame.getTimeField().setEnabled(false);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @see scoreboard.floorball.state.State#initFocus(scoreboard.floorball.JScoreboardManager)
+     */
+    @Override
+    public void initFocus(JScoreboardManager frame){
+
     }
 }
