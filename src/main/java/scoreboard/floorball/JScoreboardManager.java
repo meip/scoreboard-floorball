@@ -45,7 +45,7 @@ public class JScoreboardManager {
 
     public static void main(String[] args) {
         JScoreboardManager jScoreboardManager = new JScoreboardManager();
-        JFrame frame = new JFrame("JScoreboardManager");
+        JFrame frame = new JFrame("FB Riders Score Board Manager");
         frame.setContentPane(jScoreboardManager.managerPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();

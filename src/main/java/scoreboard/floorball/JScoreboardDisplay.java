@@ -44,11 +44,12 @@ public class JScoreboardDisplay {
         this.hostLabel.setText(managerFrame.getHostNameField().getText());
         this.guestLabel.setText(managerFrame.getGuestNameField().getText());
 
-        JFrame frame = new JFrame("JScoreboardDisplay");
+        JFrame frame = new JFrame("FB Riders Score Board");
         frame.setContentPane(this.displayPanel);
         frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+        frame.setSize(1024, 768);
         frame.addKeyListener(new PauseContinueMatchKeyListener(managerFrame));
     }
 
